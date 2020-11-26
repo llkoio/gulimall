@@ -19,8 +19,8 @@ import java.util.Map;
  */
 @Slf4j
 //@ResponseBody
-//@ControllerAdvice(basePackages = "com.atguigu.gulimall.product.controller")
-@RestControllerAdvice(basePackages = "com.atguigu.gulimall.product.controller")
+//@ControllerAdvice(basePackages = "com.atguigu.gulimall.product.app")
+@RestControllerAdvice(basePackages = "com.atguigu.gulimall.product.app")
 public class GulimallExceptionControllerAdvice {
 
 
