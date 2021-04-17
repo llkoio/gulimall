@@ -1,12 +1,13 @@
 package com.atguigu.gulimall.auth.controller;
 
 import com.alibaba.fastjson.TypeReference;
+import com.atguigu.common.utils.R;
 import com.atguigu.gulimall.authserver.feign.MemberFeign;
 import com.atguigu.gulimall.authserver.feign.ThirdPartyFeign;
 import com.atguigu.gulimall.authserver.vo.UserLoginVO;
 import com.atguigu.gulimall.authserver.vo.UserRegisterVO;
-import edu.dlut.common.constant.AuthServerConstant;
-import edu.dlut.common.exception.BizCodeEnum;
+import com.atguigu.common.constant.AuthServerConstant;
+import com.atguigu.common.exception.BizCodeEnume;
 import edu.dlut.common.utils.R;
 import edu.dlut.common.vo.MemberResponseVO;
 import org.apache.commons.lang.StringUtils;
@@ -55,7 +56,7 @@ public class IndexController {
         if (!StringUtils.isEmpty(redisCode)) {
             long l = Long.parseLong(redisCode.split("_")[1]);
             if (System.currentTimeMillis() - l < 60000)
-                return R.error(BizCodeEnum.SMS_CODE_EXCEPTION.getCode(), BizCodeEnum.SMS_CODE_EXCEPTION.getMsg());
+                return R.error(BizCodeEnume.SMS_CODE_EXCEPTION.getCode(), BizCodeEnume.SMS_CODE_EXCEPTION.getMsg());
         }
 
         String code = UUID.randomUUID().toString().substring(0, 5);
